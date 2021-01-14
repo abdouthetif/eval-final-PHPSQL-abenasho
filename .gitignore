@@ -1,0 +1,5 @@
+composer.phar
+/vendor/
+/.history/
+/.idea/
+config.php

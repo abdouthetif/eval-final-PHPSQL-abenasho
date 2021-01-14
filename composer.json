@@ -1,0 +1,13 @@
+{
+    "require": {
+        "symfony/var-dumper": "^5.2",
+      "ext-pdo": "*",
+      "ext-iconv": "*",
+      "ext-ctype": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
