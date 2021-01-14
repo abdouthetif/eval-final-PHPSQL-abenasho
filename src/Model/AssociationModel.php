@@ -58,4 +58,31 @@ class AssociationModel extends AbstractModel
 
         $this->database->prepareAndExecuteQuery($sql, [$associationId]);
     }
+
+    public function numberAssociation()
+    {
+        $sql = 'SELECT COUNT(*) FROM association_vehicule_conducteur';
+
+        return $this->database->selectAll($sql);
+    }
+
+    public function vehiculeNoConducteur()
+    {
+        $sql = 'SELECT *
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur ON vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+                WHERE association_vehicule_conducteur.id_vehicule IS NULL';
+
+        return $this->database->selectAll($sql);
+    }
+
+    public function conducteurNoVehicule()
+    {
+        $sql = 'SELECT *
+                FROM conducteur
+                LEFT JOIN association_vehicule_conducteur ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+                WHERE association_vehicule_conducteur.id_conducteur IS NULL';
+
+        return $this->database->selectAll($sql);
+    }
 }

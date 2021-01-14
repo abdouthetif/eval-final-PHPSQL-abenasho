@@ -1,0 +1,62 @@
+<div class="col-12 text-center">
+    <h3>Nombre de conducteurs</h3>
+    <p><?=$nbConducteur[0]['COUNT(*)'];?></p>
+    <hr>
+    <h3>Nombre de véhicules</h3>
+    <p><?=$nbVehicule[0]['COUNT(*)'];?></p>
+    <hr>
+    <h3>Nombre d'associations</h3>
+    <p><?=$nbAssociation[0]['COUNT(*)'];?></p>
+    <hr>
+    <h3>Véhicules sans conducteur</h3>
+    <?php if(!empty($vehiculeNoConducteurs)): ?>
+        <section class="col-12 mr-5 mb-4">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">id_vehicule</th>
+                    <th scope="col">marque</th>
+                    <th scope="col">modele</th>
+                    <th scope="col">couleur</th>
+                    <th scope="col">immatriculation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($vehiculeNoConducteurs as $vehiculeNoConducteur): ?>
+                    <tr>
+                        <th scope="row"><?=$vehiculeNoConducteur['id_vehicule'];?></th>
+                        <td><?=$vehiculeNoConducteur['marque'];?></td>
+                        <td><?=$vehiculeNoConducteur['modele'];?></td>
+                        <td><?=$vehiculeNoConducteur['couleur'];?></td>
+                        <td><?=$vehiculeNoConducteur['immatriculation'];?></td>
+                    </tr>
+                <?php endforeach;?>
+                </tbody>
+            </table>
+        </section>
+    <?php endif; ?>
+</div>
+
+<h3>Conducteurs sans véhicule</h3>
+<?php if(!empty($conducteurNoVehicules)): ?>
+    <section class="col-12 mr-5 mb-4">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">id_conducteur</th>
+                <th scope="col">prenom</th>
+                <th scope="col">nom</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($conducteurNoVehicules as $conducteurNoVehicule): ?>
+                <tr>
+                    <th scope="row"><?=$conducteurNoVehicule['id_conducteur'];?></th>
+                    <td><?=$conducteurNoVehicule['prenom'];?></td>
+                    <td><?=$conducteurNoVehicule['nom'];?></td>
+                </tr>
+            <?php endforeach;?>
+            </tbody>
+        </table>
+    </section>
+<?php endif; ?>

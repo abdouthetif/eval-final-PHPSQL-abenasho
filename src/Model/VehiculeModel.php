@@ -54,4 +54,11 @@ class VehiculeModel extends AbstractModel
 
         $this->database->prepareAndExecuteQuery($sql, [$vehiculeId]);
     }
+
+    public function numberVehicule()
+    {
+        $sql = 'SELECT COUNT(*) FROM vehicule';
+
+        return $this->database->selectAll($sql);
+    }
 }

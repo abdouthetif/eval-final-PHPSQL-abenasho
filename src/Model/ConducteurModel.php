@@ -54,4 +54,11 @@ class ConducteurModel extends AbstractModel
 
         $this->database->prepareAndExecuteQuery($sql, [$conducteurId]);
     }
+
+    public function numberConducteur()
+    {
+        $sql = 'SELECT COUNT(*) FROM conducteur';
+
+        return $this->database->selectAll($sql);
+    }
 }
