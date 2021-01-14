@@ -46,6 +46,30 @@ $routes = [
     '/conducteur/delete' => [
         'class' => 'App\\Controller\\ConducteurController',
         'method' => 'deleteConducteur'
+    ],
+    '/vehicule/add' => [
+        'class' => 'App\\Controller\\VehiculeController',
+        'method' => 'addVehicule'
+    ],
+    '/vehicule/edit' => [
+        'class' => 'App\\Controller\\VehiculeController',
+        'method' => 'editVehicule'
+    ],
+    '/vehicule/delete' => [
+        'class' => 'App\\Controller\\VehiculeController',
+        'method' => 'deleteVehicule'
+    ],
+    '/association/add' => [
+        'class' => 'App\\Controller\\AssociationController',
+        'method' => 'addAssociation'
+    ],
+    '/association/edit' => [
+        'class' => 'App\\Controller\\AssociationController',
+        'method' => 'editAssociation'
+    ],
+    '/association/delete' => [
+        'class' => 'App\\Controller\\AssociationController',
+        'method' => 'deleteAssociation'
     ]
 ];
 

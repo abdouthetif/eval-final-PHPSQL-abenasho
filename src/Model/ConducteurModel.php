@@ -20,7 +20,7 @@ class ConducteurModel extends AbstractModel
     public function getAllConducteurs()
     {
         // Requête d'insertion SQL
-        $sql = 'SELECT id_conducteur, prenom, nom
+        $sql = 'SELECT *
                 FROM conducteur';
 
         return $this->database->selectAll($sql);
@@ -29,7 +29,7 @@ class ConducteurModel extends AbstractModel
     public function getConducteurById(int $id)
     {
         // Requête d'insertion SQL
-        $sql = 'SELECT prenom, nom
+        $sql = 'SELECT *
                 FROM conducteur
                 WHERE id_conducteur = ?';
 
